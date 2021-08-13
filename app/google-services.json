@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "973523281954",
+    "project_id": "fiznote-82be6",
+    "storage_bucket": "fiznote-82be6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973523281954:android:7799f09810e79e090a827b",
+        "android_client_info": {
+          "package_name": "com.olivoreo.fiznote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973523281954-3jrs1evv9e1fq2hb6i1idrl0og4goie5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4pAm4Kuu7ypMKuu1pftTap7Z-qL0TO_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973523281954-3jrs1evv9e1fq2hb6i1idrl0og4goie5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

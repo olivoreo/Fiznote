@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sea_blue1">#4DEFFF</color>
+    <color name="sea_blue2">#33CAFF</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_alpha">#B3FFFFFF</color>
+    <color name="grey">#DBDBDB</color>
+    <color name="grey_hint">#707070</color>
+    <color name="logo_app_background">#FFFFFFFF</color>
+    <color name="trancparent">#00FFFFFF</color>
+    <color name="background_black">#99000000</color>
+
+    <!-- OVERWRITE THESE COLORS FOR A LIGHT THEME -->
+    <!-- Material DEFAULT colors -->
+    <color name="material_drawer_primary">#2196F3</color>
+    <color name="material_drawer_primary_dark">#33CAFF</color>
+    <color name="material_drawer_primary_light">#BBDEFB</color>
+    <color name="material_drawer_accent">#000000</color>
+    <!-- MaterialDrawer DEFAULT colors -->
+    <color name="material_drawer_background">#FFFFFF</color>
+    <!-- Material DEFAULT text / items colors -->
+    <color name="material_drawer_primary_text">#E4000000</color>
+    <color name="material_drawer_primary_icon">#4D000000</color>
+    <color name="material_drawer_secondary_text">#FFFFFF</color>
+    <color name="material_drawer_hint_text">#41000000</color>
+    <color name="material_drawer_divider">#42000000</color>
+    <!-- Material DEFAULT drawer colors -->
+    <color name="material_drawer_selected">#1F2BBEFF</color>
+    <color name="material_drawer_selected_legacy">#E8E8E8</color>
+    <color name="material_drawer_selected_text">#2BBEFF</color>
+    <color name="material_drawer_header_selection_text">#FFFFFFFF</color>
+    <color name="material_drawer_header_selection_subtext">#FFFFFF</color>
+    <color name="standart_background_crnt">#D1FAFF</color>
+</resources>

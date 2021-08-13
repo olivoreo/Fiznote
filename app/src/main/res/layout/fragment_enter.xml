@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.EnterFragment">
+
+    <ImageView
+        android:id="@+id/logo_register"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:src="@drawable/logo_nobackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/century_gothic_bold"
+        android:gravity="center"
+        android:text="@string/text_welcome"
+        android:textColor="@color/black"
+        android:textSize="@dimen/big_tx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_register" />
+
+    <EditText
+        android:id="@+id/registered_edtxt1"
+        android:hint="@string/registred_hinttx_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_text"
+        style="@style/registred_edtx"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/registered_edtxt2"
+        android:hint="@string/registred_hinttx_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registered_edtxt1"
+        style="@style/registred_edtx"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/next_enter"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn_next"
+        app:layout_constraintEnd_toEndOf="@id/registered_edtxt2"
+        app:layout_constraintBottom_toBottomOf="@id/registered_edtxt2"
+        app:layout_constraintTop_toTopOf="@id/registered_edtxt2"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/next_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/grey_hint"
+        android:fontFamily="@font/century_gothic_regular"
+        android:text="@string/registration_new_btn"
+        app:layout_constraintTop_toBottomOf="@+id/registered_edtxt2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/vertical_margin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

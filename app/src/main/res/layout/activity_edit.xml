@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EditActivity"
+    android:background= "@color/standart_background_crnt">
+
+    <ImageView
+        android:id="@+id/background_bottom_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:src="@color/background_black"
+        android:translationZ="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarEditNotes"
+        android:title=""
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_title_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/rounded_edtx"
+        android:fontFamily="@font/century_gothic_bold"
+        android:hint="Название"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarEditNotes"
+        android:inputType="textCapWords" />
+
+    <EditText
+        android:id="@+id/edit_description_notes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Описание"
+        android:fontFamily="@font/century_gothic_regular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_title_notes"
+        android:gravity="top"
+        android:padding="15dp"
+        android:background="@drawable/rounded_edtx"
+        android:layout_margin = "15dp"
+        android:inputType="textMultiLine" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/photo_add_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/instruments_round"
+        android:elevation="0dp"
+        android:translationZ="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/photo_btn_change"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_btn"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:background="@drawable/ripple_effect"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/photo_add_note">
+
+            <ImageView
+                android:id="@+id/camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:src="@drawable/camera"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/photo_btn_change" />
+
+            <TextView
+                android:id="@+id/camera_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:fontFamily="@font/century_gothic_regular"
+                android:text="@string/create_photo"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/camera"
+                app:layout_constraintTop_toTopOf="@id/photo_btn_change" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/photo_btn_galery"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_btn"
+            android:background="@drawable/ripple_effect"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/photo_btn_change">
+
+            <ImageView
+                android:id="@+id/galery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:src="@drawable/photo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/photo_btn_galery" />
+
+            <TextView
+                android:id="@+id/galery_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:fontFamily="@font/century_gothic_regular"
+                android:text="Галерея"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/galery"
+                app:layout_constraintTop_toTopOf="@id/photo_btn_galery" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/cancel_galery_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_btn"
+            android:background="@drawable/ripple_effect"
+            android:clickable="true"
+            android:fontFamily="@font/century_gothic_regular"
+            android:gravity="center"
+            android:text="ОТМЕНА"
+            android:textColor="@color/grey_hint"
+            android:textSize="@dimen/normal_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/photo_btn_galery" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/instruments_edit_notes"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/instruments_round"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="10dp">
+
+        <ImageView
+            android:id="@+id/add_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_photo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

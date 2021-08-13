@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Fiznote" parent="MaterialDrawerTheme.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/sea_blue1</item>
+        <item name="colorPrimaryVariant">@color/sea_blue2</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

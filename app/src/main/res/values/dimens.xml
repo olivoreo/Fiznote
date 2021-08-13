@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="vertical_margin">15dp</dimen>
+    <dimen name="vertical_Large_margin">20dp</dimen>
+    <dimen name="normal_size">15sp</dimen>
+    <dimen name="large_size">17sp</dimen>
+    <dimen name="ripple_effect_radius">20dp</dimen>
+    <dimen name="big_tx">25sp</dimen>
+    <dimen name="code_size">40sp</dimen>
+    <dimen name="height_btn">50dp</dimen>
+</resources>
