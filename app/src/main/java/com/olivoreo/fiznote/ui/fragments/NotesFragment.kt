@@ -11,9 +11,9 @@ import com.olivoreo.fiznote.models.Adapter
 import com.olivoreo.fiznote.utilits.addActivity
 import kotlinx.android.synthetic.main.fragment_notes.*
 
-class NotesFragment : BaseSecondFragment(R.layout.fragment_notes) {
+class NotesFragment : Fragment(R.layout.fragment_notes) {
 
-    private val mDatabaseManager = DatabaseManager(mActivity)
+    private val mDatabaseManager = DatabaseManager(activity)
     private val mAdapter = Adapter(ArrayList())
 
     override fun onStart() {
