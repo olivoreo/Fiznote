@@ -1,6 +1,5 @@
 package com.olivoreo.fiznote.ui.fragments
 
-import android.app.Activity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.olivoreo.fiznote.MainActivity
