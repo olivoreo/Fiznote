@@ -7,8 +7,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.olivoreo.fiznote.R
-import com.olivoreo.fiznote.databinding.ActivityEditBinding
 import com.olivoreo.fiznote.database.DatabaseManager
+import com.olivoreo.fiznote.databinding.ActivityEditBinding
+import com.olivoreo.fiznote.utilits.showToastShort
 import kotlinx.android.synthetic.main.activity_edit.*
 
 class EditActivity : AppCompatActivity() {
@@ -56,7 +57,7 @@ class EditActivity : AppCompatActivity() {
             if (title.isNotEmpty() && desc.isNotEmpty()) {
                 mDatabaseManager.insertToDb(title, desc, tempImageUri)
                 this.finish()
-            }
+            } else showToastShort("Заголовок и описание не должны быть пустыми")
         }
     }
 

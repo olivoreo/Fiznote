@@ -1,18 +1,18 @@
 package com.olivoreo.fiznote
 
-import android.app.Activity
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
 import com.olivoreo.fiznote.activities.EnterActivity
 import com.olivoreo.fiznote.databinding.ActivityMainBinding
 import com.olivoreo.fiznote.ui.fragments.NotesFragment
 import com.olivoreo.fiznote.ui.objects.AppDrawer
-import com.olivoreo.fiznote.utilits.*
-import kotlinx.android.synthetic.main.fragment_notes.*
+import com.olivoreo.fiznote.utilits.AUTH
+import com.olivoreo.fiznote.utilits.initFirebase
+import com.olivoreo.fiznote.utilits.replaceActivity
+import com.olivoreo.fiznote.utilits.replaceFragment
 
 
 class MainActivity : AppCompatActivity() {

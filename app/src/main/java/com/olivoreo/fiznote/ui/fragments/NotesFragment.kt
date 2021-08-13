@@ -1,5 +1,6 @@
 package com.olivoreo.fiznote.ui.fragments
 
+import android.app.Activity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.olivoreo.fiznote.MainActivity
@@ -10,10 +11,16 @@ import com.olivoreo.fiznote.models.Adapter
 import com.olivoreo.fiznote.utilits.addActivity
 import kotlinx.android.synthetic.main.fragment_notes.*
 
+
 class NotesFragment : Fragment(R.layout.fragment_notes) {
 
-    private val mDatabaseManager = DatabaseManager(activity)
+    private lateinit var mDatabaseManager:DatabaseManager
     private val mAdapter = Adapter(ArrayList())
+
+    override fun onAttach(activity: Activity) {
+        super.onAttach(activity)
+        mDatabaseManager = DatabaseManager(activity)
+    }
 
     override fun onStart() {
         super.onStart()

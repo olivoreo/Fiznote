@@ -3,11 +3,12 @@ package com.olivoreo.fiznote.database
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import androidx.fragment.app.FragmentActivity
 
 class DatabaseManager(context: Context) {
     private val mDatabaseHelper = DatabaseHelper(context)
     private lateinit var db:SQLiteDatabase
+
+
 
     fun openDb(){
         db = mDatabaseHelper.writableDatabase

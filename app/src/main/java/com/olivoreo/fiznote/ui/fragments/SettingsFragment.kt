@@ -1,5 +1,6 @@
 package com.olivoreo.fiznote.ui.fragments
 
+import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.olivoreo.fiznote.MainActivity
@@ -11,6 +12,12 @@ import kotlinx.android.synthetic.main.fragment_registration.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance
+    }
+
     override fun onStart() {
         super.onStart()
         settings_btn_exit.setOnClickListener { exit() }
