@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="settings_button">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/height_btn</item>
-        <item name="android:layout_marginTop">@dimen/vertical_margin</item>
-        <item name="android:clickable">true</item>
-        <item name="android:background">@drawable/ripple_effect</item>
-    </style>
-
-    <style name="mainToolbar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?attr/actionBarSize</item>
-        <item name="android:background">@color/white</item>
-    </style>
-
     <style name="registred_edtx">
-        <item name="android:layout_width">340dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginHorizontal">15dp</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:background">@drawable/registred_edtx</item>
         <item name="android:fontFamily">@font/century_gothic_regular</item>

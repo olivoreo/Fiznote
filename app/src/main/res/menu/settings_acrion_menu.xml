@@ -2,9 +2,25 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/save_note"
-        android:icon="@drawable/ic_baseline_check_24"
-        app:showAsAction="always"
-        app:actionViewClass="android.widget.SearchView"
-        android:title="Сохранить" />
+        android:icon="@drawable/btn_action_menu"
+        app:showAsAction="ifRoom"
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/settings_menu_change_name"
+                android:title="@string/settings_change_name"
+                android:icon="@drawable/change_name"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/settings_menu_add_profile_photo"
+                android:title="@string/settings_add_profile_photo"
+                android:icon="@drawable/photo_add_settings"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/settings_menu_exit"
+                android:title="@string/settings_exit"
+                android:icon="@drawable/exit_app"
+                app:showAsAction="never"/>
+        </menu>
+    </item>
 </menu>

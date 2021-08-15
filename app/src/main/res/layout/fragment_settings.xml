@@ -7,6 +7,52 @@
     tools:context=".ui.fragments.SettingsFragment">
 
     <TextView
+        android:id="@+id/tv_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/vertical_margin"
+        android:fontFamily="@font/century_gothic_bold"
+        android:text="Настройки"
+        android:textColor="@color/black"
+        android:textSize="@dimen/big_tx"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_card"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/vertical_margin"
+        android:background="@drawable/header"
+        app:layout_constraintTop_toBottomOf="@id/tv_settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/settings_profile_image"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/default_user"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Вячеслав"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_size"
+            android:fontFamily="@font/century_gothic_bold"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            app:layout_constraintStart_toEndOf="@id/settings_profile_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
         android:id="@+id/settings_text_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,15 +62,52 @@
         android:textColor="@color/material_drawer_selected_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_card"
         android:layout_marginStart="@dimen/horizontal_margin"
         android:layout_marginTop="@dimen/vertical_margin"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_btn_change_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_text_account"
+        style="@style/settings_button">
+
+        <TextView
+            android:id="@+id/settings_text_change_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tyutyuno.v@yandex.ru"
+            android:textColor="@color/black"
+            android:fontFamily="@font/century_gothic_regular"
+            android:textSize="@dimen/normal_size"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            app:layout_constraintBottom_toTopOf="@id/settings_text_desc_email"
+            />
+
+        <TextView
+            android:id="@+id/settings_text_desc_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_text_desc_email"
+            android:textColor="@color/grey_hint"
+            android:fontFamily="@font/century_gothic_regular"
+            android:textSize="@dimen/small_size"
+            app:layout_constraintTop_toBottomOf="@id/settings_text_change_email"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_btn_change_language"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/settings_text_account"
+        app:layout_constraintTop_toBottomOf="@id/settings_btn_change_email"
         style="@style/settings_button">
 
         <ImageView

@@ -52,11 +52,11 @@
         android:id="@+id/next_enter"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/btn_next"
-        app:layout_constraintEnd_toEndOf="@id/registered_edtxt2"
         app:layout_constraintBottom_toBottomOf="@id/registered_edtxt2"
-        app:layout_constraintTop_toTopOf="@id/registered_edtxt2"
-        android:layout_marginEnd="10dp"/>
+        app:layout_constraintEnd_toEndOf="@id/registered_edtxt2"
+        app:layout_constraintTop_toTopOf="@id/registered_edtxt2" />
 
     <TextView
         android:id="@+id/next_register"

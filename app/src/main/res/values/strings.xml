@@ -2,7 +2,7 @@
     <string name="app_name">Fiznote</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="settings_text_account">Основные</string>
+    <string name="settings_text_account">Аккаунт</string>
     <string name="settings_change_languahe">Язык</string>
     <string name="text_welcome">Добро пожаловать!</string>
     <string name="registred_hinttx_password">Пароль</string>
@@ -21,4 +21,8 @@
     <string name="empty_notes">Здесь пустенько)</string>
     <string name="create_photo">Сфотографировать</string>
     <string name="notes_name">Заметки</string>
+    <string name="settings_text_desc_email">Нажми, чтобы изменить адрес эл. почты</string>
+    <string name="settings_change_name">Изменить имя</string>
+    <string name="settings_add_profile_photo">Выбрать фото</string>
+    <string name="settings_exit">Выход</string>
 </resources>
