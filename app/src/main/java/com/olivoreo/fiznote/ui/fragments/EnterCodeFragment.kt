@@ -12,13 +12,13 @@ class EnterCodeFragment : Fragment(R.layout.fragment_enter_code) {
         registered_edtxt_enter_code.addTextChangedListener(AppTextWatcher {
                 val string = registered_edtxt_enter_code.text.toString()
                 if (string.length==6){
-                    verificateCode()
+                    verificationCode()
                 }
 
         })
     }
 
-    fun verificateCode() {
+    private fun verificationCode() {
         Toast.makeText(activity, "OK!", Toast.LENGTH_SHORT).show()
     }
 }

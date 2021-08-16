@@ -5,10 +5,6 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.google.firebase.database.ChildEventListener
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.olivoreo.fiznote.activities.EnterActivity
 import com.olivoreo.fiznote.databinding.ActivityMainBinding
 import com.olivoreo.fiznote.models.User
@@ -37,10 +33,6 @@ class MainActivity : AppCompatActivity() {
         initFunc()
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
     private fun initFunc() {
         if (AUTH.currentUser != null) {
             setSupportActionBar(mToolbar)
@@ -64,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUser() {
         REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
-            .addListenerForSingleValueEvent(AppValoeEventListener{
+            .addListenerForSingleValueEvent(AppValueEventListener{
                 USER = it.getValue(User::class.java) ?:User()
             })
     }

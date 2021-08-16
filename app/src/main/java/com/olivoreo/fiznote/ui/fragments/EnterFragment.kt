@@ -2,10 +2,7 @@ package com.olivoreo.fiznote.ui.fragments
 
 import android.app.ProgressDialog
 import android.util.Patterns
-import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.olivoreo.fiznote.MainActivity
 import com.olivoreo.fiznote.R
@@ -17,17 +14,17 @@ class EnterFragment : Fragment(R.layout.fragment_enter) {
 
     private lateinit var mEmail: String
     private lateinit var mPassword: String
-    private lateinit var mProgresDialog: ProgressDialog
+    private lateinit var mProgressDialog: ProgressDialog
 
     override fun onStart() {
         super.onStart()
         next_enter.setOnClickListener { login() }
         next_register.setOnClickListener { registration() }
 
-        mProgresDialog = ProgressDialog(activity)
-        mProgresDialog.setTitle(getString(R.string.please_wait))
-        mProgresDialog.setMessage(getString(R.string.enter_ex))
-        mProgresDialog.setCanceledOnTouchOutside(false)
+        mProgressDialog = ProgressDialog(activity)
+        mProgressDialog.setTitle(getString(R.string.please_wait))
+        mProgressDialog.setMessage(getString(R.string.enter_ex))
+        mProgressDialog.setCanceledOnTouchOutside(false)
 
         AUTH = FirebaseAuth.getInstance()
     }
@@ -56,15 +53,15 @@ class EnterFragment : Fragment(R.layout.fragment_enter) {
     }
 
     private fun firebaseLogin() {
-        mProgresDialog.show()
+        mProgressDialog.show()
         AUTH.signInWithEmailAndPassword(mEmail, mPassword)
             .addOnCompleteListener { e ->
                 if (e.isSuccessful) {
-                    mProgresDialog.dismiss()
+                    mProgressDialog.dismiss()
                     showToastShort("Добро пожаловать!")
                     (activity as EnterActivity).replaceActivity(MainActivity())
                 } else {
-                    mProgresDialog.dismiss()
+                    mProgressDialog.dismiss()
                     showToastLong("Произошла ошибка входа:\n${e.exception?.message.toString()}")
                 }
             }

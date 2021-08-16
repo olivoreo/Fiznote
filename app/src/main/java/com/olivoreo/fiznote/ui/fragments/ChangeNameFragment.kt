@@ -1,11 +1,6 @@
 package com.olivoreo.fiznote.ui.fragments
 
-import android.os.Bundle
-import android.view.*
-import androidx.fragment.app.Fragment
-import com.olivoreo.fiznote.MainActivity
 import com.olivoreo.fiznote.R
-import com.olivoreo.fiznote.activities.EnterActivity
 import com.olivoreo.fiznote.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_name.*
 

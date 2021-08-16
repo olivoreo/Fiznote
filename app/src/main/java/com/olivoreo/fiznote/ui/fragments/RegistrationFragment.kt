@@ -2,7 +2,6 @@ package com.olivoreo.fiznote.ui.fragments
 
 import android.app.ProgressDialog
 import android.util.Patterns
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.olivoreo.fiznote.MainActivity
@@ -13,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_registration.*
 
 class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
-    private lateinit var mProgresDialog: ProgressDialog
+    private lateinit var mProgressDialog: ProgressDialog
     private lateinit var mEmail: String
     private lateinit var mPassword: String
     private lateinit var mConfirmPassword: String
@@ -21,17 +20,17 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
     override fun onStart() {
         super.onStart()
-        registered_btn_next.setOnClickListener { sign_up() }
+        registered_btn_next.setOnClickListener { signUp() }
 
-        mProgresDialog = ProgressDialog(activity)
-        mProgresDialog.setTitle(getString(R.string.please_wait))
-        mProgresDialog.setMessage("Создание аккаунта...")
-        mProgresDialog.setCanceledOnTouchOutside(false)
+        mProgressDialog = ProgressDialog(activity)
+        mProgressDialog.setTitle(getString(R.string.please_wait))
+        mProgressDialog.setMessage("Создание аккаунта...")
+        mProgressDialog.setCanceledOnTouchOutside(false)
 
         AUTH = FirebaseAuth.getInstance()
     }
 
-    private fun sign_up() {
+    private fun signUp() {
         mEmail = registered_edtxt_email.text.toString()
         mPassword = registered_edtxt_password.text.toString()
         mConfirmPassword = registered_edtxt_confirm_password.text.toString()
@@ -61,7 +60,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
     }
 
     private fun firebaseSignUp() {
-        mProgresDialog.show()
+        mProgressDialog.show()
         AUTH.createUserWithEmailAndPassword(mEmail, mPassword)
             .addOnCompleteListener { e ->
                 if (e.isSuccessful) {
@@ -75,16 +74,16 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                     REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
                         .addOnCompleteListener { e2 ->
                             if (e2.isSuccessful) {
-                                mProgresDialog.dismiss()
+                                mProgressDialog.dismiss()
                                 showToastShort("Добро пожаловать!")
                                 (activity as EnterActivity).replaceActivity(MainActivity())
                             } else {
-                                mProgresDialog.dismiss()
+                                mProgressDialog.dismiss()
                                 showToastLong("Произошла ошибка добавления данных:\n${e2.exception?.message.toString()}")
                             }
                         }
                 } else {
-                    mProgresDialog.dismiss()
+                    mProgressDialog.dismiss()
                     showToastLong("Произошла ошибка регистрации:\n${e.exception?.message.toString()}")
                 }
             }

@@ -4,10 +4,8 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import com.google.firebase.auth.FirebaseAuth
 import com.olivoreo.fiznote.MainActivity
 import com.olivoreo.fiznote.R
-import com.olivoreo.fiznote.utilits.AUTH
 
 open class BaseChangeFragment(layout: Int) : Fragment(layout) {
     override fun onStart() {

@@ -1,16 +1,12 @@
 package com.olivoreo.fiznote.ui.fragments
 
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
 import com.olivoreo.fiznote.MainActivity
 import com.olivoreo.fiznote.R
 import com.olivoreo.fiznote.activities.EnterActivity
 import com.olivoreo.fiznote.utilits.*
-import kotlinx.android.synthetic.main.fragment_registration.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {

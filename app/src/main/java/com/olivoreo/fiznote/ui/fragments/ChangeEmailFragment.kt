@@ -1,13 +1,9 @@
 package com.olivoreo.fiznote.ui.fragments
 
 import android.util.Patterns
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import com.olivoreo.fiznote.R
 import com.olivoreo.fiznote.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_email.*
-import kotlinx.android.synthetic.main.fragment_registration.*
 
 class ChangeEmailFragment : BaseChangeFragment(R.layout.fragment_change_email) {
 

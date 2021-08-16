@@ -35,7 +35,7 @@ class EditActivity : AppCompatActivity() {
         add_photo.setOnClickListener { addPhoto() }
         cancel_galery_btn.setOnClickListener { cancelBtn() }
         background_bottom_black.setOnClickListener { cancelBtn() }
-        photo_btn_galery.setOnClickListener { galeryAddPhoto() }
+        photo_btn_galery.setOnClickListener { galleryAddPhoto() }
     }
 
     override fun onResume() {
@@ -70,7 +70,7 @@ class EditActivity : AppCompatActivity() {
         }
     }
 
-    private fun galeryAddPhoto() {
+    private fun galleryAddPhoto() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, imageRequestCode)
