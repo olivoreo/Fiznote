@@ -4,16 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ChangeNameFragment">
+    tools:context=".ui.fragments.ChangeNameFragment"
+    android:background="@drawable/gradient_main">
 
     <EditText
         android:id="@+id/settings_add_name"
-        style="@style/registred_edtx"
+        android:hint="@string/registred_hinttx_name"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/vertical_margin"
-        android:hint="@string/registred_hinttx_name"
+        style="@style/settings_change_text"
         android:inputType="textPersonName"/>
+
+    <TextView
+        android:id="@+id/settings_change_name_desc"
+        android:text="@string/settingschange_name_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_add_name"
+        style="@style/press_edit_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

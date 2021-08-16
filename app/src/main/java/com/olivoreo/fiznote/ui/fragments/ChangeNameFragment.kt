@@ -1,5 +1,8 @@
 package com.olivoreo.fiznote.ui.fragments
 
+import android.view.View
+import android.view.WindowManager
+import com.olivoreo.fiznote.MainActivity
 import com.olivoreo.fiznote.R
 import com.olivoreo.fiznote.utilits.*
 import kotlinx.android.synthetic.main.fragment_change_name.*
@@ -11,6 +14,13 @@ class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
     override fun onResume() {
         super.onResume()
         settings_add_name.setText(USER.name)
+        settings_add_name.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus){
+                settings_change_name_desc.visibility = View.GONE
+                settings_add_name.setText("")
+                //activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+            }
+        }
     }
 
     override fun change() {

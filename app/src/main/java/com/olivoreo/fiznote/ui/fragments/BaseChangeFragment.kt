@@ -14,11 +14,6 @@ open class BaseChangeFragment(layout: Int) : Fragment(layout) {
         (activity as MainActivity).mAppDrawer.disableDrawer()
     }
 
-    override fun onStop() {
-        super.onStop()
-        (activity as MainActivity).mAppDrawer.enableDrawer()
-    }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         activity?.menuInflater?.inflate(R.menu.settings_confirm_menu, menu)
     }

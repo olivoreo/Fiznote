@@ -26,4 +26,5 @@
     <string name="settings_add_profile_photo">Выбрать фото</string>
     <string name="settings_exit">Выход</string>
     <string name="settings_tv">Настройки</string>
+    <string name="settingschange_name_desc">Нажмите, чтобы изменить</string>
 </resources>

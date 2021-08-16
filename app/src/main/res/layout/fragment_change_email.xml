@@ -4,16 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.ChangeEmailFragment">
+    tools:context=".ui.fragments.ChangeEmailFragment"
+    android:background="@drawable/gradient_main">
 
     <EditText
         android:id="@+id/settings_add_email"
-        style="@style/registred_edtx"
+        android:hint="@string/registred_hinttx_email"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/vertical_margin"
-        android:hint="@string/registred_hinttx_email"
+        style="@style/settings_change_text"
         android:inputType="textEmailAddress"/>
+    <TextView
+        android:id="@+id/settings_change_email_desc"
+        android:text="@string/settingschange_name_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_add_email"
+        style="@style/press_edit_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
