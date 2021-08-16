@@ -19,6 +19,7 @@
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/activity_enter2.xml" value="0.36102564102564105" />
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/activity_main.xml" value="0.36102564102564105" />
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/fragment_base.xml" value="0.2015625" />
+        <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/fragment_change_email.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/fragment_change_name.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/fragment_content.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/fragment_create_note.xml" value="0.36666666666666664" />
@@ -28,6 +29,7 @@
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/fragment_settings.xml" value="0.31296296296296294" />
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/layout/rc_item.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/menu/settings_acrion_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/Fiznote2/app/src/main/res/menu/settings_confirm_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

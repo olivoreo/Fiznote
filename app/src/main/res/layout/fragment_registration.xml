@@ -53,6 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registered_edtxt_password"
         style="@style/registred_edtx"
+        android:paddingEnd="40dp"
         android:inputType="textPassword"/>
 
     <ImageView

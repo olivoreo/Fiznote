@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/vertical_margin"
         android:fontFamily="@font/century_gothic_bold"
-        android:text="Настройки"
+        android:text="@string/settings_tv"
         android:textColor="@color/black"
         android:textSize="@dimen/big_tx"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="@dimen/vertical_margin"
+        android:layout_marginHorizontal="@dimen/vertical_margin"
         android:background="@drawable/header"
         app:layout_constraintTop_toBottomOf="@id/tv_settings"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,11 +40,12 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
+            android:id="@+id/settings_name_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Вячеслав"
+            tools:text="Имя"
             android:textColor="@color/white"
-            android:textSize="@dimen/normal_size"
+            android:textSize="@dimen/large_size"
             android:fontFamily="@font/century_gothic_bold"
             android:layout_marginStart="@dimen/horizontal_margin"
             app:layout_constraintStart_toEndOf="@id/settings_profile_image"
@@ -77,7 +79,7 @@
             android:id="@+id/settings_text_change_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="tyutyuno.v@yandex.ru"
+            tools:text="example@example.com"
             android:textColor="@color/black"
             android:fontFamily="@font/century_gothic_regular"
             android:textSize="@dimen/normal_size"
@@ -136,14 +138,5 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/settings_btn_exit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Выйти"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settings_btn_change_language"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

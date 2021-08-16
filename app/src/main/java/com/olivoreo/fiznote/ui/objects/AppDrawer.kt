@@ -18,6 +18,7 @@ import com.olivoreo.fiznote.R
 import com.olivoreo.fiznote.ui.fragments.ClockFragment
 import com.olivoreo.fiznote.ui.fragments.NotesFragment
 import com.olivoreo.fiznote.ui.fragments.SettingsFragment
+import com.olivoreo.fiznote.utilits.USER
 import com.olivoreo.fiznote.utilits.replaceFragment
 
 class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
@@ -148,7 +149,7 @@ class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
             .withDividerBelowHeader(false)
             .withSelectionListEnabledForSingleProfile(false)
             .addProfiles(
-                ProfileDrawerItem().withName("Вячеслав")
+                ProfileDrawerItem().withName(USER.name)
                     .withEmail("tyutyuno.v@yandex.ru")
                     .withIcon(R.drawable.default_user)
             ).build()

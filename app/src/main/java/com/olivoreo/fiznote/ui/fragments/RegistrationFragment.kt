@@ -37,19 +37,26 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
         mConfirmPassword = registered_edtxt_confirm_password.text.toString()
         mName = registered_edtxt_name.text.toString()
 
-        if (mName.isEmpty()) {
-            registered_edtxt_name.error = "Введите имя"
-        }
-        if (!Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
-            registered_edtxt_email.error = "Неверный формат адреса электронной почты"
-        } else if (mPassword.isEmpty()) {
-            registered_edtxt_password.error = "Введите пароль"
-        } else if (mPassword.length < 6) {
-            registered_edtxt_password.error = "Пароль должен содержать более 6 символов"
-        } else if (mPassword != mConfirmPassword) {
-            registered_edtxt_confirm_password.error = "Пароли должны совпадать"
-        } else {
+        if (mName.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(mEmail).matches() && mPassword.isNotEmpty() && mPassword.length >= 6 && mPassword == mConfirmPassword) {
             firebaseSignUp()
+        } else {
+            if (mName.isEmpty()) {
+                registered_edtxt_name.error = "Введите имя"
+            }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
+                registered_edtxt_email.error = "Неверный формат адреса электронной почты"
+            }
+
+            if (mPassword.isEmpty()) {
+                registered_edtxt_password.error = "Введите пароль"
+            } else if (mPassword.length < 6) {
+                registered_edtxt_password.error = "Пароль должен содержать более 6 символов"
+            }
+
+            if (mPassword != mConfirmPassword) {
+                registered_edtxt_confirm_password.error = "Пароли должны совпадать"
+            }
         }
     }
 

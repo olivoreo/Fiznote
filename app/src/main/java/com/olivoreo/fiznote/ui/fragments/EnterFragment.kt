@@ -39,13 +39,19 @@ class EnterFragment : Fragment(R.layout.fragment_enter) {
     private fun login() {
         mEmail = registered_edtxt1.text.toString()
         mPassword = registered_edtxt2.text.toString()
-        if (!Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {
-            registered_edtxt1.error = "Неверный адрес электронной почты"
-        }
-        if (registered_edtxt2.text.toString().isEmpty()) {
-            registered_edtxt2.error = "Введите пароль"
-        } else {
+
+        if (Patterns.EMAIL_ADDRESS.matcher(mEmail).matches() && mPassword.isNotEmpty()) {
             firebaseLogin()
+        } else {
+            if (mEmail.isEmpty()) {
+                registered_edtxt1.error = "Введите адрес эл. почты"
+            }
+            if (mPassword.isEmpty()) {
+                registered_edtxt2.error = "Введите пароль"
+            }
+            else if (!Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()){
+                registered_edtxt1.error = "Неверный адрес электронной почты"
+            }
         }
     }
 

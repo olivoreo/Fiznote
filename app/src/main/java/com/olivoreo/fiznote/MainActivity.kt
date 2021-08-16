@@ -5,14 +5,16 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.olivoreo.fiznote.activities.EnterActivity
 import com.olivoreo.fiznote.databinding.ActivityMainBinding
+import com.olivoreo.fiznote.models.User
 import com.olivoreo.fiznote.ui.fragments.NotesFragment
 import com.olivoreo.fiznote.ui.objects.AppDrawer
-import com.olivoreo.fiznote.utilits.AUTH
-import com.olivoreo.fiznote.utilits.initFirebase
-import com.olivoreo.fiznote.utilits.replaceActivity
-import com.olivoreo.fiznote.utilits.replaceFragment
+import com.olivoreo.fiznote.utilits.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +37,10 @@ class MainActivity : AppCompatActivity() {
         initFunc()
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
+
     private fun initFunc() {
         if (AUTH.currentUser != null) {
             setSupportActionBar(mToolbar)
@@ -53,6 +59,14 @@ class MainActivity : AppCompatActivity() {
             typefaceb = resources.getFont(R.font.century_gothic_bold)
         }
         initFirebase()
+        initUser()
+    }
+
+    private fun initUser() {
+        REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+            .addListenerForSingleValueEvent(AppValoeEventListener{
+                USER = it.getValue(User::class.java) ?:User()
+            })
     }
 
     override fun onBackPressed() {
