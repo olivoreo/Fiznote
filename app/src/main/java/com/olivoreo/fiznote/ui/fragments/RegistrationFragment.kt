@@ -36,7 +36,9 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
         mConfirmPassword = registered_edtxt_confirm_password.text.toString()
         mName = registered_edtxt_name.text.toString()
 
-        if (mName.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(mEmail).matches() && mPassword.isNotEmpty() && mPassword.length >= 6 && mPassword == mConfirmPassword) {
+        if (mName.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(mEmail)
+                .matches() && mPassword.isNotEmpty() && mPassword.length >= 6 && mPassword == mConfirmPassword
+        ) {
             firebaseSignUp()
         } else {
             if (mName.isEmpty()) {

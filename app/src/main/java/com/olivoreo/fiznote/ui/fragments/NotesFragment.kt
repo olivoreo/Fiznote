@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.olivoreo.fiznote.MainActivity
 import com.olivoreo.fiznote.R
 import com.olivoreo.fiznote.activities.EditActivity
-import com.olivoreo.fiznote.database.DatabaseManager
 import com.olivoreo.fiznote.models.Adapter
 import com.olivoreo.fiznote.utilits.addActivity
 import kotlinx.android.synthetic.main.fragment_notes.*
@@ -14,12 +13,12 @@ import kotlinx.android.synthetic.main.fragment_notes.*
 
 class NotesFragment : Fragment(R.layout.fragment_notes) {
 
-    private lateinit var mDatabaseManager:DatabaseManager
+    //private lateinit var mDatabaseManager:DatabaseManager
     private val mAdapter = Adapter(ArrayList())
 
     override fun onAttach(activity: Activity) {
         super.onAttach(activity)
-        mDatabaseManager = DatabaseManager(activity)
+        //mDatabaseManager = DatabaseManager(activity)
     }
 
     override fun onStart() {
@@ -27,15 +26,16 @@ class NotesFragment : Fragment(R.layout.fragment_notes) {
         initFields()
         create_note.setOnClickListener { createNote() }
     }
+
     override fun onResume() {
         super.onResume()
-        mDatabaseManager.openDb()
+        //mDatabaseManager.openDb()
         fillAdapter()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        mDatabaseManager.closeDb()
+        //mDatabaseManager.closeDb()
     }
 
 
@@ -48,8 +48,8 @@ class NotesFragment : Fragment(R.layout.fragment_notes) {
         recyclerView.adapter = mAdapter
     }
 
-    private fun fillAdapter(){
-        mAdapter.updateAdapter(mDatabaseManager.readDb())
+    private fun fillAdapter() {
+        //mAdapter.updateAdapter(mDatabaseManager.readDb())
     }
 
 }

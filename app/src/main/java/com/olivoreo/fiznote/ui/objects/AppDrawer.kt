@@ -21,13 +21,13 @@ import com.olivoreo.fiznote.ui.fragments.SettingsFragment
 import com.olivoreo.fiznote.utilits.USER
 import com.olivoreo.fiznote.utilits.replaceFragment
 
-class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
+class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
 
     private lateinit var mDrawer: Drawer
     private lateinit var mHeader: AccountHeader
     private lateinit var typefacer: Typeface
     private lateinit var typefaceb: Typeface
-    private lateinit var mDrawerLayout:DrawerLayout
+    private lateinit var mDrawerLayout: DrawerLayout
 
     var isDrawerOpen = true
 
@@ -38,26 +38,26 @@ class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
         mDrawerLayout = mDrawer.drawerLayout
     }
 
-    fun disableDrawer(){
+    fun disableDrawer() {
         mDrawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = false
         mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-        toolbar.setNavigationOnClickListener{
+        toolbar.setNavigationOnClickListener {
             mainActivity.supportFragmentManager.popBackStack()
         }
     }
 
-    fun enableDrawer(){
+    fun enableDrawer() {
         mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         mDrawer.actionBarDrawerToggle?.isDrawerIndicatorEnabled = true
         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
-        toolbar.setNavigationOnClickListener{
+        toolbar.setNavigationOnClickListener {
             mDrawer.openDrawer()
         }
     }
 
-    fun closeDrawer(){
-        if (mDrawer.isDrawerOpen){
+    fun closeDrawer() {
+        if (mDrawer.isDrawerOpen) {
             mDrawer.closeDrawer()
             isDrawerOpen = true
         } else isDrawerOpen = false
@@ -150,7 +150,7 @@ class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
             .withSelectionListEnabledForSingleProfile(false)
             .addProfiles(
                 ProfileDrawerItem().withName(USER.name)
-                    .withEmail("tyutyuno.v@yandex.ru")
+                    .withEmail(USER.email)
                     .withIcon(R.drawable.default_user)
             ).build()
     }

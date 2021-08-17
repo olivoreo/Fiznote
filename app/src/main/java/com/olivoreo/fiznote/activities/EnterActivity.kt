@@ -16,10 +16,6 @@ class EnterActivity : AppCompatActivity() {
         mBinding = ActivityEnter2Binding.inflate(layoutInflater)
         setContentView(mBinding.root)
         initFirebase()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        replaceFragment(EnterFragment(),false)
+        replaceFragment(EnterFragment(), false)
     }
 }
