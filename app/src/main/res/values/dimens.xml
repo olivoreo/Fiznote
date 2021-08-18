@@ -6,7 +6,7 @@
     <dimen name="normal_size">16sp</dimen>
     <dimen name="small_size">14sp</dimen>
     <dimen name="large_size">17sp</dimen>
-    <dimen name="bck_radius">20dp</dimen>
+    <dimen name="bck_radius">35dp</dimen>
     <dimen name="big_tx">25sp</dimen>
     <dimen name="code_size">40sp</dimen>
     <dimen name="height_btn">50dp</dimen>

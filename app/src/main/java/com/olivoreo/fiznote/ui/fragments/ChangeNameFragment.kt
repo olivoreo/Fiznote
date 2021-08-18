@@ -29,6 +29,7 @@ class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
                 .addOnCompleteListener { e ->
                     if (e.isSuccessful){
                         USER.name = mName
+                        APP_ACTIVITY.mAppDrawer.updateHeader()
                         fragmentManager?.popBackStack()
                     }
                 }

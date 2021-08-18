@@ -53,3 +53,12 @@ inline fun putImageToStorage(uri: Uri, path: StorageReference, crossinline funct
         .addOnSuccessListener { function() }
         .addOnFailureListener { showToastLong(it.message.toString()) }
 }
+
+inline fun initUser(crossinline function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
+        .addListenerForSingleValueEvent(AppValueEventListener {
+            USER = it.getValue(User::class.java) ?: User()
+
+            function()
+        })
+}

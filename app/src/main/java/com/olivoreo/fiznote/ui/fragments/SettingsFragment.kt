@@ -28,7 +28,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     private fun initFields() {
         settings_name_card.text = USER.name
         settings_text_change_email.text = USER.email
-        settings_profile_image.dowmloadAndSetImage(USER.photoUrl)
+        settings_profile_image.downloadAndSetImage(USER.photoUrl)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -66,9 +66,10 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
             putImageToStorage(uri, path) {
                 getUrlFromStorage(path) {
                     putUrlToDatabase(it) {
-                        settings_profile_image.dowmloadAndSetImage(it)
+                        settings_profile_image.downloadAndSetImage(it)
                         showToastShort("Данные обновлены")
                         USER.photoUrl = it
+                        APP_ACTIVITY.mAppDrawer.updateHeader()
                     }
                 }
             }

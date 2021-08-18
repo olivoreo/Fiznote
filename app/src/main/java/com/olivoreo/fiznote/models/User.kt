@@ -4,5 +4,5 @@ data class User(
     var id: String = "",
     var name: String = "",
     var email: String = "",
-    var photoUrl: String = ""
+    var photoUrl: String = "empty"
 )

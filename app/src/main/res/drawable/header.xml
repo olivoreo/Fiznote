@@ -6,6 +6,7 @@
         android:angle="135"
         android:startColor="#2BBEFF"
         android:endColor="#54FAFF" />
-    <corners android:radius="@dimen/bck_radius"/>
+    <corners android:topLeftRadius="@dimen/bck_radius"
+        android:bottomRightRadius="@dimen/bck_radius"/>
 
 </shape>

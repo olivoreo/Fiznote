@@ -1,8 +1,11 @@
 package com.olivoreo.fiznote.ui.objects
 
 import android.graphics.Typeface
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Build
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -14,11 +17,15 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
+import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader
+import com.mikepenz.materialdrawer.util.DrawerImageLoader
 import com.olivoreo.fiznote.R
+import com.olivoreo.fiznote.models.User
 import com.olivoreo.fiznote.ui.fragments.ClockFragment
 import com.olivoreo.fiznote.ui.fragments.NotesFragment
 import com.olivoreo.fiznote.ui.fragments.SettingsFragment
 import com.olivoreo.fiznote.utilits.USER
+import com.olivoreo.fiznote.utilits.downloadAndSetImage
 import com.olivoreo.fiznote.utilits.replaceFragment
 
 class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
@@ -29,10 +36,13 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
     private lateinit var typefaceb: Typeface
     private lateinit var mDrawerLayout: DrawerLayout
 
+    private lateinit var mCurrentProfile:ProfileDrawerItem
+
     var isDrawerOpen = true
 
     fun create() {
         createFont()
+        initLoader()
         createHeader()
         createDrawer()
         mDrawerLayout = mDrawer.drawerLayout
@@ -142,6 +152,11 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
     }
 
     private fun createHeader() {
+        mCurrentProfile = ProfileDrawerItem()
+            .withName(USER.name)
+            .withEmail(USER.email)
+            .withIcon(USER.photoUrl)
+            .withIdentifier(200)
         mHeader = AccountHeaderBuilder()
             .withActivity(mainActivity)
             .withHeaderBackground(R.drawable.header)
@@ -149,9 +164,7 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
             .withDividerBelowHeader(false)
             .withSelectionListEnabledForSingleProfile(false)
             .addProfiles(
-                ProfileDrawerItem().withName(USER.name)
-                    .withEmail(USER.email)
-                    .withIcon(R.drawable.default_user)
+                mCurrentProfile
             ).build()
     }
 
@@ -160,5 +173,23 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
             typefacer = mainActivity.resources.getFont(R.font.century_gothic_regular)
             typefaceb = mainActivity.resources.getFont(R.font.century_gothic_bold)
         }
+    }
+
+    fun updateHeader(){
+        mCurrentProfile
+            .withName(USER.name)
+            .withEmail(USER.email)
+            .withIcon(USER.photoUrl)
+
+        mHeader.updateProfile(mCurrentProfile)
+    }
+
+    private fun initLoader(){
+        DrawerImageLoader.init(object :AbstractDrawerImageLoader(){
+            override fun set(imageView: ImageView, uri: Uri, placeholder: Drawable) {
+                super.set(imageView, uri, placeholder)
+                imageView.downloadAndSetImage(uri.toString())
+            }
+        })
     }
 }
